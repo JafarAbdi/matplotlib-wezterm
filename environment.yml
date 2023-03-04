@@ -1,0 +1,17 @@
+name: matplotlib-wezterm
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11.0
+  - pre-commit
+  - networkx
+  - numpy
+  - matplotlib
+  - pandas
+  - scipy
+  - pip
+  - ipython
+  - pip:
+    - ptpython

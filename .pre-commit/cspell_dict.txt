@@ -1,0 +1,13 @@
+conda
+httpx
+micromamba
+Jafar
+MPLBACKEND
+matplotlib
+wezterm
+ipython
+numpy
+scipy
+ptpython
+networkx
+itermplot

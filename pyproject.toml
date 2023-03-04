@@ -1,0 +1,23 @@
+[project]
+name = "matplotlib-wezterm"
+version = "0.0.1"
+description = "A matplotlib backend for the wezterm terminal emulator"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: BSD-3-Clause",
+    "Framework :: Matplotlib",
+    "Topic :: Terminals",
+]
+dependencies = [ "matplotlib" ]
+
+[project.urls]
+"Homepage" = "https://github.com/JafarAbdi/matplotlib-wezterm"
+"Bug Tracker" = "https://github.com/JafarAbdi/matplotlib-wezterm/issues"
+
+[build-system]
+requires = [ "setuptools>=61.0" ]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = [ "." ]
