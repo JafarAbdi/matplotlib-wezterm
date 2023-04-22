@@ -11,14 +11,12 @@ extend-select = [
   "I",
   # pep8-naming
   "N",
-  # pydocstyle
-  "D",
   # pyupgrade
   "UP",
   # flake8-2020
   "YTT",
   # flake8-annotations
-  "ANN",
+  # "ANN",
   # flake8-bandit
   "S",
   # flake8-blind-except
@@ -45,8 +43,6 @@ extend-select = [
   "EXE",
   # lake8-implicit-str-concat
   "ISC",
-  # lake8-import-conventions
-  "ICN",
   # flake8-logging-format
   "G",
   # flake8-no-pep420
@@ -96,7 +92,7 @@ extend-select = [
 # line-length = 88
 ignore = ["E501"]
 # G004: loggins-f-string
-extend-ignore = ["ARG002", "ANN101", "G004"]
+extend-ignore = ["ARG002", "G004"]
 target-version = "py311"
 [pydocstyle]
 convention = "google"

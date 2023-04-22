@@ -1,48 +1,44 @@
-import os
-import sys
+"""A matplotlib backend for wezterm."""
 
-from io import BytesIO
-from subprocess import run
-import os
 import io
+from subprocess import run
 
 import matplotlib
-from matplotlib import interactive, is_interactive
 from matplotlib._pylab_helpers import Gcf
-from matplotlib.backend_bases import _Backend, FigureManagerBase
+from matplotlib.backend_bases import FigureManagerBase
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 from matplotlib.figure import Figure
 
 
 def draw_if_interactive():
     if matplotlib.is_interactive():
-        figmanager = Gcf.get_active()
-        if figmanager is not None:
-            figmanager.show()
+        figure_manager = Gcf.get_active()
+        if figure_manager is not None:
+            figure_manager.show()
 
 
 def show():
-    figmanager = Gcf.get_active()
-    if figmanager is not None:
-        figmanager.show()
+    figure_manager = Gcf.get_active()
+    if figure_manager is not None:
+        figure_manager.show()
     else:
         for manager in Gcf.get_all_fig_managers():
             manager.show()
 
 
 def new_figure_manager(num, *args, **kwargs):
-    FigureClass = kwargs.pop("FigureClass", Figure)
-    thisFig = FigureClass(*args, **kwargs)
-    return new_figure_manager_given_figure(num, thisFig)
+    FigureClass = kwargs.pop("FigureClass", Figure)  # noqa: N806
+    this_figure = FigureClass(*args, **kwargs)
+    return new_figure_manager_given_figure(num, this_figure)
 
 
 def new_figure_manager_given_figure(num, figure):
     canvas = FigureCanvas(figure)
-    manager = FigureManager(canvas, num)
-    return manager
+    return FigureManager(canvas, num)
 
-class ItermplotFigureManager(FigureManagerBase):
-    def __init__(self, canvas, num):
+
+class WeztermFigureManager(FigureManagerBase):
+    def __init__(self, canvas, num) -> None:
         FigureManagerBase.__init__(self, canvas, num)
 
     def show(self):
@@ -59,4 +55,4 @@ class ItermplotFigureManager(FigureManagerBase):
 
 
 FigureCanvas = FigureCanvasAgg
-FigureManager = ItermplotFigureManager
+FigureManager = WeztermFigureManager
