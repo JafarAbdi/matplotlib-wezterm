@@ -47,7 +47,7 @@ class WeztermFigureManager(FigureManagerBase):
         self.canvas.print_figure(data, dpi=200)
 
         run(
-            ["wezterm", "imgcat"],
+            ["wezterm", "imgcat", "--height", "75%"],
             capture_output=False,
             text=False,
             input=data.getbuffer(),
