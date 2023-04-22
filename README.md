@@ -20,6 +20,10 @@ micromamba run -n matplotlib-wezterm pip install .
 MPLBACKEND='module://matplotlib_wezterm' micromamba run -n matplotlib-wezterm ipython
 ```
 
+
+https://user-images.githubusercontent.com/16278108/233807919-eef927ea-ae60-424c-abe2-63435849be5f.mp4
+
+
 If you want to show the plot without explicitly calling `plt.show()`
 create the following `~/.ipython/profile_default/startup/wezterm.py`
 with the following content:
@@ -48,3 +52,6 @@ def enable_wezterm():
 if os.environ.get("MPLBACKEND", "") == "module://matplotlib_wezterm":
     enable_wezterm()
 ```
+
+
+https://user-images.githubusercontent.com/16278108/233807925-1d2c92ed-fa16-43e8-a609-3aa07e39e36c.mp4
