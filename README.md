@@ -21,7 +21,7 @@ MPLBACKEND='module://matplotlib_wezterm' micromamba run -n matplotlib-wezterm ip
 ```
 
 If you want to show the plot without explicitly calling `plt.show()`
-you create the following `~/.ipython/profile_default/startup/wezterm.py`
+create the following `~/.ipython/profile_default/startup/wezterm.py`
 with the following content:
 
 ```python
