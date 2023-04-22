@@ -11,3 +11,7 @@ scipy
 ptpython
 networkx
 itermplot
+pylab
+setuptools
+getbuffer
+imgcat

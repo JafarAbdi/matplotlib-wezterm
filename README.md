@@ -17,5 +17,5 @@ micromamba run -n matplotlib-wezterm pip install .
 ## Usage
 
 ```bash
-MPLBACKEND='module://matplotlib-wezterm' micromamba run -n matplotlib-wezterm ipython
+MPLBACKEND='module://matplotlib_wezterm' micromamba run -n matplotlib-wezterm ipython
 ```
